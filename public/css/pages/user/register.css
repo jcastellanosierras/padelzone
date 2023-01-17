@@ -1,0 +1,35 @@
+@import "./base.css";
+
+main form input[type="text"],
+main form input[type="date"] {
+  flex: 1 1 60%;
+  height: 2rem;
+  border: 1px solid rgb(201, 201, 201);
+}
+
+.name-input-radio {
+  text-align: right;
+  flex: 1 1 40%;
+  margin-right: 2rem;
+}
+
+.name-input-radio label {
+  margin-right: 0rem;
+}
+
+.input-radio {
+  flex: 1 1 60%;
+}
+
+.input-radio div {
+  display: inline;
+}
+
+.checkbox-form div:first-child {
+  flex: 1 1 40%;
+  margin-right: 2rem;
+}
+
+.checkbox-form div:last-child {
+  flex: 1 1 60%;
+}

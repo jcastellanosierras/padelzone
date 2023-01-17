@@ -1,0 +1,83 @@
+h2 {
+  font-size: 3.2rem;
+  text-align: center;
+  color: black;
+}
+
+main {
+  flex-grow: 1;
+}
+
+main form {
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 1rem;
+  padding: 2rem;
+  border: 1px solid rgb(201, 201, 201);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+main a {
+  font-size: 1.2rem;
+  color:rgb(129, 129, 129) !important;
+  transition: 300ms;
+}
+
+main a:hover {
+  color:rgb(36, 36, 36) !important;
+}
+
+main form .fragment-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+main form .fragment-form:last-child {
+  margin-bottom: 0;
+}
+
+main form label {
+  text-align: right;
+  flex: 1 1 40%;
+  margin-right: 2rem;
+}
+
+main form input[type="email"],
+main form input[type="password"] {
+  flex: 1 1 60%;
+  height: 2rem;
+  border: 1px solid rgb(201, 201, 201);
+}
+
+main form input[type="submit"] {
+  width: 15rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  background-color: rgb(243, 96, 96);
+  color: white;
+  transition: 300ms;
+  border: none;
+}
+
+main form input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(255, 139, 139);
+}
+
+main form input {
+  padding: 0px 0.5rem;
+}
+
+main #path {
+  margin-bottom: 4rem;
+}
+
+main #path a {
+  color: rgb(20, 20, 20) !important;
+}

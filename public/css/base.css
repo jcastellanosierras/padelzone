@@ -1,0 +1,32 @@
+html {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+li {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 0 2rem;
+}
+
+article {
+  margin-top: 5rem;
+}
+
+ion-icon {
+  contain: none;
+}

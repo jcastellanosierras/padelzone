@@ -1,0 +1,50 @@
+#container {
+  margin: 0px auto;
+  margin-top: 4rem;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h5 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  height: 1.8rem;
+  width: 35rem;
+  padding: 0 0.7rem;
+}
+
+form > div {
+  text-align: center;
+}
+
+input[type="submit"] {
+  margin-top: 2rem;
+  width: 15rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  background-color: rgb(243, 96, 96);
+  color: white;
+  transition: 300ms;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgb(255, 139, 139);
+}

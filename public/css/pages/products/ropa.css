@@ -1,0 +1,13 @@
+@import './base.css';
+
+#h2-details {
+  display: none;
+}
+
+#description {
+  margin-top: 0.5rem;
+}
+
+#description p {
+  font-size: 1.4rem;
+}

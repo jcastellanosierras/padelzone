@@ -1,0 +1,145 @@
+#content {
+  flex-grow: 1;
+  display: flex;
+  margin: 0px auto;
+  flex-direction: row;
+  width: 91%;
+}
+
+#content > * {
+  margin: 0 0.5rem;
+  padding-top: 8rem;
+}
+
+#path {
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+main {
+  flex-basis: 80%;
+  box-shadow: 0px 0px 2px rgb(151, 151, 151);
+}
+
+main h2 {
+  font-size: 3.5rem;
+}
+
+.product-cart {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+}
+
+.product-cart > * {
+  padding-left: 1rem;
+}
+
+.img-product-cart {
+  width: 15rem;
+}
+
+.title-product-cart {
+  max-width: 20%;
+  font-size: 1.5rem;
+}
+
+.actions-product-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions-product-cart > * {
+  margin-bottom: 0.5rem;
+}
+
+.actions-product-cart input[type="number"] {
+  width: 10rem;
+  height: 2rem;
+  margin-left: 2px;
+}
+
+.actions-product-cart input[type="submit"] {
+  width: 10rem;
+  height: 2rem;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.price-product-cart {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.quantity-product-cart {
+  max-width: 10rem;
+  padding: 0 0.5rem;
+}
+
+aside {
+  flex-basis: 20%;
+  padding: 2rem 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 2px rgb(151, 151, 151);
+}
+
+.total-price {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.button-process {
+  width: 14rem;
+  height: 3rem;
+  font-size: 1.4rem;
+}
+
+aside .button-process {
+  margin: 0px auto;
+}
+
+.update-product-cart {
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  width: 10rem;
+}
+
+#buttons-section {
+  display: flex;
+  justify-content: center;
+}
+
+#buttons-section input:first-child {
+  margin-right: 1rem;
+}
+
+#buttons-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#buttons-aside input:first-child {
+  margin-bottom: 1rem;
+}
+
+aside h3 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.history-product {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.history-product img {
+  width: 10rem;
+}

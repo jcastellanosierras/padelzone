@@ -1,0 +1,13 @@
+@import './base.css';
+
+#h2-details {
+  display: none;
+}
+
+#description ul {
+  flex-direction: column;
+  list-style: disc;
+  margin-left: 2rem;
+  font-size: 1.4em;
+}
+
