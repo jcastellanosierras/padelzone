@@ -307,6 +307,7 @@ main #path a:hover {
   background-color: rgb(20, 20, 20);
   border-radius: 0.2rem;
   transition: all 300ms;
+  text-align: center;
 }
 
 .btn-see-all a {
