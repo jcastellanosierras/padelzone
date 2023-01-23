@@ -58,6 +58,7 @@ $route['register'] = 'user/register';
 $route['logout'] = 'user/logout';
 
 $route['shopping_cart'] = 'shopping_cart';
+$route['history'] = 'shopping_cart/history';
 
 $route['palas'] =             'category/index/palas';
 $route['palas/(:any)'] =      'category/index/palas/$1';

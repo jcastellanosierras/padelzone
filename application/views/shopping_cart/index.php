@@ -283,6 +283,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       echo '</div>';
     }
     ?>
+
+    <a href="<?= base_url(); ?>index.php/history" id="history-link" class="btn-see-all">Ver historial</a>
 </aside>
 
 <?= $footer; ?>

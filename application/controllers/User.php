@@ -314,6 +314,13 @@ class User extends CI_Controller {
     if ($this->input->method() == 'post') {
       $this->iniciar();
     }
+
+    // Elimina el dato que indica que se viene de la página del carrito de compra
+    // Por si no se ha borrado anteriormente
+    if ($this->session->userdata('shopping_cart')) {
+      // Eliminamos el valor del array de sesión
+      $this->session->unset_userdata('shopping_cart');
+    }
   }
 }
 ?>

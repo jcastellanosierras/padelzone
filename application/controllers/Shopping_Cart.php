@@ -26,6 +26,44 @@ class Shopping_Cart extends CI_Controller {
 		$this->data['site_url'] = $this->site_url;
 	}
 
+	private function load_history ($id_user, $limit = null) {
+		if ($limit == null) {
+			// Obtenemos ahora productos del historial
+			$history = $this->History->get_history($id_user);
+		} else {
+			$history = $this->History->get_history($id_user, $limit);
+		}
+		
+		// Ahora obtenemos los datos de los productos
+		$history_products = array();
+		foreach($history as $product) {
+			$history_product = array(
+				$this->Product->get_product_by_id($product->id_producto),
+				$product->cantidad
+			);
+
+			// Revertimos el orden del array para que salgan primero los productos que se han comprado más recientemente
+			$history_products[] = $history_product;
+		}
+
+		$this->data['history'] = array_reverse($history_products);
+	}
+
+	private function load_aux_views () {
+		$data_header = array(
+			'styles' => array('styles.css', 'pages/shopping_cart.css'),
+			'session' => $this->session->userdata(),
+      'path' => $this->load->view(
+        'templates/path',
+				array(),
+        TRUE
+			)
+		);
+
+		$this->data['header'] = $this->load->view('templates/header', $data_header, TRUE);
+		$this->data['footer'] = $this->load->view('templates/footer', array(), TRUE);
+	}
+
 	public function load_shopping_cart () {
 
 		// Debemos obtener el carrito del cliente
@@ -45,35 +83,12 @@ class Shopping_Cart extends CI_Controller {
 		// Ahora pasamos los productos a la view
 		$this->data['cart_products'] = $products;
 
-		// Obtenemos ahora productos del historial
-		$history = $this->History->get_history($id_user);
-		// Ahora obtenemos los datos de los productos
-		$history_products = array();
-		foreach($history as $product) {
-			$history_product = array(
-				$this->Product->get_product_by_id($product->id_producto),
-				$product->cantidad
-			);
+		// Obtenemos ahora productos del historial, 2 productos concretamente
+		$this->load_history($id_user, 2);
 
-			$history_products[] = $history_product;
-		}
-
-		$this->data['history'] = $history_products;
-
-		$data_header = array(
-			'styles' => array('styles.css', 'pages/shopping_cart.css'),
-			'session' => $this->session->userdata(),
-      'path' => $this->load->view(
-        'templates/path',
-				array(),
-        TRUE
-			)
-		);
-
-		$this->data['header'] = $this->load->view('templates/header', $data_header, TRUE);
-		$this->data['footer'] = $this->load->view('templates/footer', array(), TRUE);
-		
-		$this->load->view('shopping_cart', $this->data);
+		// Cargamos las vistas auxiliares y la principal
+		$this->load_aux_views();
+		$this->load->view('shopping_cart/index', $this->data);
 	}
 
 	private function is_user_loged () : bool {
@@ -182,6 +197,24 @@ class Shopping_Cart extends CI_Controller {
 		$this->Shopping_Cart->clear($this->session->userdata('id'));
 
 		$this->load_shopping_cart();
+	}
+
+	public function history () {
+		// Comprobamos que el cliente haya iniciado sesión, si no lo enviamos al login
+		if (!$this->is_user_loged()) {
+			$_SESSION['shopping_cart'] = true;
+			redirect('/login');
+			return;
+		}
+
+		// Obtenemos el id de usuario
+		$id_user = $this->session->userdata('id');
+
+		$this->load_history($id_user);
+
+		// Cargamos las vistas auxiliares y la principal
+		$this->load_aux_views();
+		$this->load->view('shopping_cart/history', $this->data);
 	}
 
 	public function index () {

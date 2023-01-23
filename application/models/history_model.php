@@ -45,14 +45,17 @@ class History_model extends CI_Model {
   }
 
   // Devuelve los últimos dos pedidos del usuario
-  public function get_history (string $id_user) {
+  public function get_history (string $id_user, int $limit = null) {
     $this->db->select()->where('id_usuario', $id_user)->from('historial');
     $num_pedidos = $this->db->get()->num_rows();
 
     $this->db->select('id_producto, cantidad')
              ->where('id_usuario', $id_user)
-             ->limit(2, $num_pedidos - 2)
              ->from('historial');
+
+    if ($limit != null) {
+      $this->db->limit($limit, $num_pedidos - $limit);
+    }
 
     return $this->db->get()->result();
   }

@@ -68,6 +68,10 @@ main h2 {
   height: 2rem;
   font-weight: bolder;
   font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0.5rem;
+  box-sizing: content-box;
 }
 
 .price-product-cart {
@@ -78,6 +82,10 @@ main h2 {
 .quantity-product-cart {
   max-width: 10rem;
   padding: 0 0.5rem;
+}
+
+.quantity-product-history {
+  font-size: 1.5rem;
 }
 
 aside {
@@ -142,4 +150,8 @@ aside h3 {
 
 .history-product img {
   width: 10rem;
+}
+
+#history-link {
+  font-weight: 600;
 }
